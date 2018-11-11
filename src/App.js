@@ -25,6 +25,7 @@ const App = () => {
       <p>Target Weight</p>
       <input
         onChange={(e) => setTargetWeight(e.target.value)}
+        type="number"
         value={targetWeight || ''}
       />
       <button onClick={handleCalculateClick}>
