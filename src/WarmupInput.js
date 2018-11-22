@@ -20,41 +20,55 @@ const WarmupInput = () => {
   }
 
   return (
-    <div>
-      <h1>Warmup</h1>
-      <p>Target Weight</p>
-      <input
-        onChange={(e) => setTargetWeight(e.target.value)}
-        type="number"
-        value={targetWeight || ''}
-      />
-      <button onClick={handleCalculateClick}>
-        Calculate
-      </button>
-      {isCalculated && (
-        <button onClick={handleClearClick}>
-          Clear
-        </button>
-      )}
-      { isCalculated && (
-        <div>
-          <div>
-            <span>Empty Bar</span>
-            <span>45 x 5 x 3</span>
-          </div>
-          <div>
-            <span>40%</span>
-            <span>{firstWarmup} x 5</span>
-          </div>
-          <div>
-            <span>60%</span>
-            <span>{secondWarmup} x 3</span>
-          </div>
-          <div>
-            <span>80%</span>
-            <span>{thirdWarmup} x 2</span>
-          </div>
+    <div className="warmup-input">
+      <h1 className="warmup-input__header">Warmup</h1>
+      <div className="warmup-input__form">
+        <p className="warmup-input__label">Target Weight</p>
+        <div className="warmup-input__row">
+          <input
+            className="warmup-input__input"
+            onChange={(e) => setTargetWeight(e.target.value)}
+            type="number"
+            value={targetWeight || ''}
+          />
+          <button
+            className="warmup-input__button"
+            onClick={handleCalculateClick}
+          >
+            CALC
+          </button>
+          {isCalculated && (
+            <button
+              className="warmup-input__secondary-button"
+              onClick={handleClearClick}
+            >
+              Clear
+            </button>
+          )}
         </div>
+      </div>
+      { isCalculated && (
+        <>
+          <hr className="warmup-input__divider" />
+          <div>
+            <div>
+              <span>Empty Bar</span>
+              <span>45 x 5 x 3</span>
+            </div>
+            <div>
+              <span>40%</span>
+              <span>{firstWarmup} x 5</span>
+            </div>
+            <div>
+              <span>60%</span>
+              <span>{secondWarmup} x 3</span>
+            </div>
+            <div>
+              <span>80%</span>
+              <span>{thirdWarmup} x 2</span>
+            </div>
+          </div>
+        </>
       )}
     </div>
   )
