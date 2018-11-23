@@ -1,12 +1,11 @@
 .app {
-  background-color: $black;
-  color: $primary-teal;
+  color: black;
   font-family: $sans-serif;
   height: 100%;
   position: relative;
 
   &__content {
-    border: 2px solid $primary-teal;
+    border: 2px solid black;
     padding: 20px 16px;
     position: absolute;
     top: 50%;
