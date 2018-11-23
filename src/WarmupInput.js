@@ -53,19 +53,19 @@ const WarmupInput = () => {
           <div className="warmup-input__table">
             <div className="warmup-input__table-row">
               <span>Empty Bar</span>
-              <span className="warmup-input__value">3 x 5 x 45</span>
+              <span className="warmup-input__value">3 x 5 x 45 lbs</span>
             </div>
             <div className="warmup-input__table-row">
               <span>40%</span>
-              <span className="warmup-input__value">5 x {firstWarmup}</span>
+              <span className="warmup-input__value">5 x {firstWarmup} lbs</span>
             </div>
             <div className="warmup-input__table-row">
               <span>60%</span>
-              <span className="warmup-input__value">3 x {secondWarmup}</span>
+              <span className="warmup-input__value">3 x {secondWarmup} lbs</span>
             </div>
             <div className="warmup-input__table-row">
               <span>80%</span>
-              <span className="warmup-input__value">2 x {thirdWarmup}</span>
+              <span className="warmup-input__value">2 x {thirdWarmup} lbs</span>
             </div>
           </div>
         </>
