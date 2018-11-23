@@ -24,7 +24,7 @@ const WarmupInput = () => {
       <h1 className="warmup-input__header">Warmup</h1>
       <div className="warmup-input__form">
         <p className="warmup-input__label">Target Weight</p>
-        <div className="warmup-input__row">
+        <div className="warmup-input__form-row">
           <input
             className="warmup-input__input"
             onChange={(e) => setTargetWeight(e.target.value)}
@@ -50,22 +50,22 @@ const WarmupInput = () => {
       { isCalculated && (
         <>
           <hr className="warmup-input__divider" />
-          <div>
-            <div>
+          <div className="warmup-input__table">
+            <div className="warmup-input__table-row">
               <span>Empty Bar</span>
-              <span>45 x 5 x 3</span>
+              <span className="warmup-input__value">3 x 5 x 45</span>
             </div>
-            <div>
+            <div className="warmup-input__table-row">
               <span>40%</span>
-              <span>{firstWarmup} x 5</span>
+              <span className="warmup-input__value">5 x {firstWarmup}</span>
             </div>
-            <div>
+            <div className="warmup-input__table-row">
               <span>60%</span>
-              <span>{secondWarmup} x 3</span>
+              <span className="warmup-input__value">3 x {secondWarmup}</span>
             </div>
-            <div>
+            <div className="warmup-input__table-row">
               <span>80%</span>
-              <span>{thirdWarmup} x 2</span>
+              <span className="warmup-input__value">2 x {thirdWarmup}</span>
             </div>
           </div>
         </>

@@ -11,7 +11,7 @@
     margin-top: 10px;
   }
 
-  &__row {
+  &__form-row {
     margin-top: 4px;
   }
 
@@ -50,8 +50,26 @@
     color: $secondary-text;
   }
 
+  &__button,
+  &__secondary-button {
+    margin-left: 4px;
+    width: 50px;
+  }
+
   &__divider {
     border: 1px solid $primary;
     margin: 20px 0;
+  }
+
+  &__table-row {
+    display: flex;
+
+    &:not(:first-child) {
+      padding-top: 4px;
+    }
+  }
+
+  &__value {
+    margin-left: auto;
   }
 }
