@@ -13,6 +13,8 @@
 
   &__form-row {
     margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__label {
@@ -27,6 +29,8 @@
     height: 15px;
     outline: none;
     padding: 8px;
+    max-width: 100px;
+    width: 100%;
   }
 
   &__button,
@@ -55,8 +59,7 @@
 
   &__button,
   &__secondary-button {
-    margin-left: 4px;
-    width: 50px;
+    width: 60px;
   }
 
   &__save-button {

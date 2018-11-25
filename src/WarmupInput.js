@@ -38,7 +38,7 @@ const WarmupInput = () => {
           <input
             className="warmup-input__input"
             onChange={(e) => setTargetWeight(e.target.value)}
-            placeholder="Enter top set weight"
+            placeholder="Enter weight"
             type="number"
             value={targetWeight || ''}
           />
