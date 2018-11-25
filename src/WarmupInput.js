@@ -27,7 +27,7 @@ const WarmupInput = () => {
           <input
             className="warmup-input__input"
             onChange={(e) => setTargetWeight(e.target.value)}
-            placeholder="Enter top set tweight"
+            placeholder="Enter top set weight"
             type="number"
             value={targetWeight || ''}
           />
@@ -68,6 +68,9 @@ const WarmupInput = () => {
               <span className="warmup-input__value">2 x {thirdWarmup} lbs</span>
             </div>
           </div>
+          <button className="warmup-input__save-button">
+            Save
+          </button>
         </>
       )}
     </div>
