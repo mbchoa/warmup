@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 
+import { kgToLb, lbToKg, round5 } from './utils';
+
 const WarmupInput = () => {
   const [targetWeight, setTargetWeight] = useState(0);
   const [isCalculated, setIsCalculated] = useState(false);
   const [firstWarmup, setFirstWarmup] = useState(0);
   const [secondWarmup, setSecondWarmup] = useState(0);
   const [thirdWarmup, setThirdWarmup] = useState(0);
-
-  function round5 (number) {
-    return Math.round(number * .2) * 5
-  }
+  const [weightMode, setWeightMode] = useState('lbs');
 
   function handleCalculateClick () {
     setFirstWarmup(round5(targetWeight * 0.4));
@@ -21,6 +20,14 @@ const WarmupInput = () => {
   function handleClearClick () {
     setIsCalculated(false);
     setTargetWeight(0);
+  }
+
+  function toggleWeightMode () {
+    setWeightMode(weightMode === 'lbs' ? 'kgs' : 'lbs');
+    setTargetWeight(weightMode === 'lbs'
+      ? round5(lbToKg(targetWeight))
+      : round5(kgToLb(targetWeight))
+    );
   }
 
   return (
@@ -41,6 +48,14 @@ const WarmupInput = () => {
           >
             CALC
           </button>
+          {!isCalculated && (
+            <button
+              className="warmup-input__secondary-button"
+              onClick={toggleWeightMode}
+            >
+              { weightMode }
+            </button>
+          )}
           {isCalculated && (
             <button
               className="warmup-input__secondary-button"
@@ -57,19 +72,19 @@ const WarmupInput = () => {
           <div className="warmup-input__table">
             <div className="warmup-input__table-row">
               <span>Empty Bar</span>
-              <span className="warmup-input__value">3 x 5 x 45 lbs</span>
+              <span className="warmup-input__value">3 x 5 x 45 {weightMode}</span>
             </div>
             <div className="warmup-input__table-row">
               <span>40%</span>
-              <span className="warmup-input__value">5 x {firstWarmup} lbs</span>
+              <span className="warmup-input__value">5 x {firstWarmup} {weightMode}</span>
             </div>
             <div className="warmup-input__table-row">
               <span>60%</span>
-              <span className="warmup-input__value">3 x {secondWarmup} lbs</span>
+              <span className="warmup-input__value">3 x {secondWarmup} {weightMode}</span>
             </div>
             <div className="warmup-input__table-row">
               <span>80%</span>
-              <span className="warmup-input__value">2 x {thirdWarmup} lbs</span>
+              <span className="warmup-input__value">2 x {thirdWarmup} {weightMode}</span>
             </div>
           </div>
           <button className="warmup-input__save-button">
