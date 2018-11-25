@@ -7,10 +7,14 @@ const WarmupInput = () => {
   const [secondWarmup, setSecondWarmup] = useState(0);
   const [thirdWarmup, setThirdWarmup] = useState(0);
 
+  function round5 (number) {
+    return Math.round(number * .2) * 5
+  }
+
   function handleCalculateClick () {
-    setFirstWarmup(targetWeight * 0.4);
-    setSecondWarmup(targetWeight * 0.6);
-    setThirdWarmup(targetWeight * 0.8);
+    setFirstWarmup(round5(targetWeight * 0.4));
+    setSecondWarmup(round5(targetWeight * 0.6));
+    setThirdWarmup(round5(targetWeight * 0.8));
     setIsCalculated(true);
   }
 
