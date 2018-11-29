@@ -1,0 +1,14 @@
+version: '3'
+ 
+services:
+  flask:
+    restart: always
+    build: ./app
+  nginx:
+    restart: always
+    build: ./nginx
+    depends_on:
+      - flask 
+    ports:
+      - "80:80"
+
