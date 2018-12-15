@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      - PORT=8080
+      - PG_USER=postgres
+      - PG_PASSWORD=postgres
+      - PG_HOST=postgres
+      - PG_PORT=5432
+      - PG_DB=workouts
+    ports:
+      - 8080:8080
+    command: ["./wait-for-it.sh", "postgres:5432", "--", "/go/bin/warmup-api"]
+  postgres:
+    image: postgres:alpine
+    restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 30s
+      timeout: 30s
+      retries: 3
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=workouts
+    ports:
+      - 5432:5432
+
