@@ -3,6 +3,7 @@ package db
 import (
   "fmt"
   "log"
+  "os"
   _ "github.com/lib/pq"
   "github.com/jmoiron/sqlx"
 )
@@ -19,7 +20,7 @@ func Init() {
   fmt.Println("Initializing connection to database...")
 
   var err error
-  db, err = sqlx.Open("postgres", "host=postgres user=postgres password=postgres dbname=workouts sslmode=disable")
+  db, err = sqlx.Open("postgres", GetDbEnvVariables())
   if err != nil {
     log.Fatalln(err)
   }
@@ -33,5 +34,15 @@ func Init() {
 
 func GetDB() *sqlx.DB {
   return db
+}
+
+func GetDbEnvVariables() string {
+  return fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
+    os.Getenv("PG_HOST"),
+    os.Getenv("PG_PORT"),
+    os.Getenv("PG_USER"),
+    os.Getenv("PG_PASSWORD"),
+    os.Getenv("PG_DB"),
+  )
 }
 

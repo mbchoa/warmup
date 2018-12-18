@@ -26,12 +26,11 @@ Navigate to http://localhost:5000/calculate-warmup/<target_weight> to fetch calc
 #### Go
 ```
 $ cd api-go
-$ docker-compose build
-$ docker-compose up
+$ make dev 
 ```
 
-API endpoint is served from http://localhost:8080. Navigate to any of the following available API
-endpoints to test CRUD operations against PostgreSQL database.
+The dev Makefile script will bring up the postgres service defined in the docker-compose file.
+The go API service is served from http://localhost:8080. Navigate to any of the following available API endpoints to test CRUD operations against PostgreSQL database.
 
 ##### API endpoints
 
