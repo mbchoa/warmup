@@ -26,6 +26,7 @@ Navigate to http://localhost:5000/calculate-warmup/<target_weight> to fetch calc
 #### Go
 ```
 $ cd api-go
+$ go get // installs Go dependencies defined in the go.mod file
 $ make dev 
 ```
 
