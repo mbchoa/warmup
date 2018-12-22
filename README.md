@@ -27,7 +27,8 @@ Navigate to http://localhost:5000/calculate-warmup/<target_weight> to fetch calc
 ```
 $ cd api-go
 $ go get // installs Go dependencies defined in the go.mod file
-$ make dev 
+$ make dev-db // brings up Postgres database
+$ make dev // starts up Go server using watcher library (similar to nodemon in Node)
 ```
 
 The dev Makefile script will bring up the postgres service defined in the docker-compose file.
