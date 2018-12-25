@@ -6,6 +6,7 @@ import (
   "fmt"
   "net/http"
   "github.com/gin-gonic/gin"
+  "github.com/mongodb/mongo-go-driver/bson"
   "github.com/mongodb/mongo-go-driver/bson/primitive"
   "github.com/mongodb/mongo-go-driver/mongo/options"
   "github.com/mbchoa/warmup/api-go-nosql/models"
@@ -62,8 +63,15 @@ func GetWorkouts(c *gin.Context) {
 }
 
 func GetWorkoutById(c *gin.Context) {
-  id := c.Param("id")
-  fmt.Printf("Get workout by id: %s", id)
+  objectID, _ := primitive.ObjectIDFromHex(c.Param("id"))
+  filter := bson.M{"_id": objectID}
+  var result models.Workout
+  err := db.Collection.FindOne(context.TODO(), filter).Decode(&result)
+  if err != nil {
+    c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+    return
+  }
+  c.JSON(http.StatusOK, result)
 }
 
 func UpdateWorkoutById(c *gin.Context) {
