@@ -75,12 +75,17 @@ func GetWorkoutById(c *gin.Context) {
 }
 
 func UpdateWorkoutById(c *gin.Context) {
-  id := c.Param("id")
-  fmt.Println("Update workout by id: %s", id)
+  // fmt.Println("Update workout by id: %s", id)
 }
 
 func DeleteWorkoutById(c *gin.Context) {
-  id := c.Param("id")
-  fmt.Println("Delete workout by id: %s", id)
+  objectID, _ := primitive.ObjectIDFromHex(c.Param("id"))
+  filter := bson.M{"_id": objectID}
+  _, err := db.Collection.DeleteOne(context.TODO(), filter)
+  if err != nil {
+    c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+    return
+  }
+  c.JSON(http.StatusNoContent, gin.H{})
 }
 
