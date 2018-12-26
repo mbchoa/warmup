@@ -2,16 +2,16 @@
   color: black;
   font-family: $sans-serif;
   height: 100%;
-  position: relative;
 
-  &__content {
-    border: 2px solid black;
-    padding: 20px 16px;
+  &__warmup-container {
+    height: 100%;
+    position: relative;
+  }
+
+  &__warmup-center {
     position: absolute;
     top: 50%;
     left: 50%;
-    max-width: 253px; 
-    width: 100%;
     transform: translate(-50%, -50%);
   }
 }

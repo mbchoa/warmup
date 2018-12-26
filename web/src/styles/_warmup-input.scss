@@ -1,4 +1,8 @@
 .warmup-input {
+  border: 2px solid black;
+  max-width: 253px;
+  padding: 20px 16px;
+
   &__header {
     font-size: 36px;
     font-weight: 500;
@@ -34,8 +38,8 @@
   }
 
   &__button,
-  &__secondary-button, 
-  &__save-button {  
+  &__secondary-button,
+  &__save-button {
     cursor: pointer;
     font-family: $sans-serif;
     font-weight: 700;
@@ -44,7 +48,7 @@
     text-transform: uppercase;
   }
 
-  &__button, 
+  &__button,
   &__save-button {
     border: 2px solid $secondary;
     background-color: transparent;
@@ -66,7 +70,7 @@
     margin-top: 20px;
     transition: 0.2s;
     width: 100%;
-    
+
     &:hover {
       background-color: $secondary;
       color: $secondary-text;

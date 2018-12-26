@@ -1,6 +1,18 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
+import { Router } from '@reach/router'
 
 import WarmupInput from './WarmupInput';
+import Workouts from './Workouts';
+
+const WarmupInputRoute = () => (
+  <div className="app__warmup-container">
+    <div className="app__warmup-center">
+      <WarmupInput />
+    </div>
+  </div>
+);
+
+const WorkoutRoute = () => <Workouts />
 
 const App = () => {
   useEffect(() => {
@@ -18,9 +30,10 @@ const App = () => {
   })
   return (
     <div className="app">
-      <div className="app__content">
-        <WarmupInput />
-      </div>
+      <Router component={Fragment}>
+        <WarmupInputRoute path="/warmup" />
+        <WorkoutRoute path="/workouts" />
+      </Router>
     </div>
   );
 }
