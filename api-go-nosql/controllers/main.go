@@ -5,6 +5,7 @@ import (
   "context"
   "fmt"
   "net/http"
+  "time"
   "github.com/gin-gonic/gin"
   "github.com/mongodb/mongo-go-driver/bson"
   "github.com/mongodb/mongo-go-driver/bson/primitive"
@@ -20,8 +21,8 @@ func CreateWorkout(c *gin.Context) {
     c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
     return
   }
-  // c.IndentedJSON(http.StatusOK, data)
 
+  data.CreatedAt = time.Now()
   result, err := db.Collection.InsertOne(context.TODO(), data)
   if err != nil {
     c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})

@@ -1,6 +1,7 @@
 package models
 
 import (
+  "time"
   "github.com/mongodb/mongo-go-driver/bson/primitive"
 )
 
@@ -17,6 +18,7 @@ type Exercise struct {
 
 type Workout struct {
   Id primitive.ObjectID `bson:"_id,omitempty" json:"_id,omitempty"`
+  CreatedAt time.Time `bson:"created_at" json:"created_at"`
   Exercises []Exercise `bson:"exercises" json:"exercises"`
 }
 
