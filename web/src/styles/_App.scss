@@ -3,11 +3,17 @@
   font-family: $sans-serif;
   height: 100%;
 
+  &__router {
+    height: 100%;
+  }
+
+  &__home-container,
   &__warmup-container {
     height: 100%;
     position: relative;
   }
 
+  &__home-center,
   &__warmup-center {
     position: absolute;
     top: 50%;

@@ -1,0 +1,58 @@
+.home {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  grid-template-rows: 100px 100px;
+  grid-template-areas:
+    "warmuplink macrolink"
+    "placeholder-left placeholder-right";
+  grid-gap: 10px;
+
+  &__warmup-link,
+  &__macro-link,
+  &__placeholder-left,
+  &__placeholder-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+  }
+
+  &__warmup-link,
+  &__macro-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.1s;
+
+    &:hover {
+      background-color: $secondary;
+      color: $secondary-text;
+    }
+  }
+
+  &__warmup-link {
+    grid-area: warmuplink;
+  }
+
+  &__macro-link {
+    grid-area: macrolink
+  }
+
+  &__placeholder-left,
+  &__placeholder-right {
+    transition: 0.1s;
+
+    &:hover {
+      background-color: lightgrey;
+    }
+  }
+
+  &__placeholder-left {
+    background-color: grey;
+    grid-area: placeholder-left;
+  }
+
+  &__placeholder-right {
+    background-color: grey;
+    grid-area: placeholder-right
+  }
+}
