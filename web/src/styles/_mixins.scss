@@ -1,0 +1,14 @@
+@mixin updatePropertyOnHover($property, $baseValue, $hoverValue) {
+  #{$property}: $baseValue;
+  transition: 0.2s;
+
+  &:hover {
+    #{$property}: $hoverValue;
+  }
+}
+
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

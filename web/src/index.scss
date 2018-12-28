@@ -1,8 +1,10 @@
 @import 'styles/fonts.scss';
 @import 'styles/reset.scss';
 @import 'styles/global.scss';
-@import 'styles/colors.scss';
+@import 'styles/variables.scss';
+@import 'styles/mixins';
 
 @import 'styles/App.scss';
 @import 'styles/home.scss';
+@import 'styles/macros.scss';
 @import 'styles/warmup-input';

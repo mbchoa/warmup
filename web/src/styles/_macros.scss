@@ -1,0 +1,105 @@
+.macros {
+  border: 2px solid $primary;
+  display: grid;
+  grid-template-columns: 360px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "gender"
+    "height"
+    "weight"
+    "age"
+    "activity"
+    "action";
+  padding: 20px 16px;
+
+  & > div {
+    display: flex;
+    height: 40px;
+    padding: 10px 0;
+  }
+
+  &__gender {
+    grid-area: gender;
+  }
+
+  &__gender-button {
+    border: 2px solid $secondary;
+    background-color: transparent;
+    color: $grey;
+    cursor: pointer;
+    font-size: medium;
+    outline: none;
+    width: 50%;
+
+    &--selected {
+      background-color: $secondary;
+      color: $secondary-text;
+    }
+  }
+
+  &__height {
+    grid-area: height;
+  }
+
+  &__weight {
+    grid-area: weight;
+  }
+
+  &__age {
+    grid-area: age;
+  }
+
+  &__activity {
+    grid-area: activity;
+  }
+
+  &__action {
+    grid-area: action;
+    place-items: center;
+    width: 100%;
+  }
+
+  &__input {
+    border: 2px solid $secondary;
+    background-color: transparent;
+    font-size: $medium;
+    outline: none;
+    padding: 8px;
+    width: 40%;
+  }
+
+  &__select {
+    background-color: transparent;
+    border: 2px solid $primary;
+    align-self: center;
+    font-size: $medium;
+    height: 32px;
+    width: 100%;
+    outline: none;
+  }
+
+  &__submit {
+    @include updatePropertyOnHover(background-color, transparent, $primary);
+    @include updatePropertyOnHover(color, $secondary, $secondary-text);
+    @include center-block;
+
+    border: 2px solid $primary;
+    cursor: pointer;
+    font-size: $medium;
+    height: 36px;
+    outline: none;
+    width: 60%;
+  }
+
+  &__label {
+    align-self: center;
+    flex: 1;
+    font-size: $medium;
+  }
+
+  &__inputgroup {
+    display: flex;
+    flex: 2;
+    justify-content: space-between
+  }
+}

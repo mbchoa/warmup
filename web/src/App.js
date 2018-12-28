@@ -1,7 +1,8 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Router } from '@reach/router'
 
 import Home from './Home';
+import Macros from './Macros';
 import WarmupInput from './WarmupInput';
 import Workouts from './Workouts';
 
@@ -11,7 +12,16 @@ const HomeRoute = () => (
       <Home />
     </div>
   </div>
-)
+);
+
+const MacrosRoute = () => (
+  <div className="app__macros-container">
+    <div className="app__home-center">
+      <Macros />
+    </div>
+  </div>
+);
+
 const WarmupInputRoute = () => (
   <div className="app__warmup-container">
     <div className="app__warmup-center">
@@ -40,6 +50,7 @@ const App = () => {
     <div className="app">
       <Router className="app__router">
         <HomeRoute path="/" />
+        <MacrosRoute path="/macros" />
         <WarmupInputRoute path="/warmup" />
         <WorkoutRoute path="/workouts" />
       </Router>
