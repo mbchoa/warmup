@@ -11,14 +11,14 @@ const Macros = () => (
       <button className="macros__gender-button">Female</button>
     </FieldGroup>
     <FieldGroup block="height" label="Height">
-      <input className="macros__input"/>
-      <input className="macros__input"/>
+      <input className="macros__input" placeholder="ft" />
+      <input className="macros__input" placeholder="in" />
     </FieldGroup>
     <FieldGroup block="weight" label="Weight">
-      <input className="macros__input"/>
+      <input className="macros__input" placeholder="lbs" />
     </FieldGroup>
     <FieldGroup block="age" label="Age">
-      <input className="macros__input"/>
+      <input className="macros__input" placeholder="years" />
     </FieldGroup>
     <FieldGroup block="activity" label="Activity">
       <select className="macros__select">
