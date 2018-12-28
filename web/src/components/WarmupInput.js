@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { kgToLb, lbToKg, round5 } from './utils';
+import { kgToLb, lbToKg, round5 } from '../utils';
 
 const WarmupInput = () => {
   const [targetWeight, setTargetWeight] = useState(0);

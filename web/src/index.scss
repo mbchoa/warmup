@@ -1,10 +1,11 @@
-@import 'styles/fonts.scss';
-@import 'styles/reset.scss';
-@import 'styles/global.scss';
-@import 'styles/variables.scss';
+@import 'styles/fonts';
+@import 'styles/reset';
+@import 'styles/global';
+@import 'styles/variables';
 @import 'styles/mixins';
 
-@import 'styles/App.scss';
-@import 'styles/home.scss';
-@import 'styles/macros.scss';
+@import 'styles/app';
+@import 'styles/home';
+@import 'styles/macros';
 @import 'styles/warmup-input';
+@import 'styles/workouts';

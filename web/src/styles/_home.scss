@@ -23,6 +23,10 @@
     text-transform: uppercase;
     transition: 0.1s;
 
+    &:visited {
+      color: $primary;
+    }
+
     &:hover {
       background-color: $secondary;
       color: $secondary-text;

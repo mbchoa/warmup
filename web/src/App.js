@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Router } from '@reach/router'
 
-import Home from './Home';
-import Macros from './Macros';
-import WarmupInput from './WarmupInput';
-import Workouts from './Workouts';
+import Home from './components/Home';
+import Macros from './components/Macros';
+import WarmupInput from './components/WarmupInput';
+import Workouts from './components/Workouts';
 
 const HomeRoute = () => (
   <div className="app__home-container">
