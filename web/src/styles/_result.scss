@@ -1,0 +1,27 @@
+.result {
+  border: 2px solid $primary;
+  margin-top: 20px;
+
+  &__tabs {
+    border-bottom: 2px solid $primary;
+    display: flex;
+    list-style-type: none;
+  }
+
+  &__tab {
+    display: inline-block;
+    flex: 1;
+    padding: 12px 0;
+    text-align: center;
+
+    &:not(:first-child) {
+      border-left: 2px solid $primary;
+    }
+  }
+
+  &__content {
+    padding: 20px 16px;
+    text-align: center;
+  }
+}
+
