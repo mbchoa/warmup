@@ -9,13 +9,24 @@
   }
 
   &__tab {
+    cursor: pointer;
     display: inline-block;
     flex: 1;
     padding: 12px 0;
     text-align: center;
+    transition: 0.2s;
 
     &:not(:first-child) {
       border-left: 2px solid $primary;
+    }
+
+    &:hover {
+      background-color: $grey;
+    }
+
+    &--selected {
+      background-color: $secondary;
+      color: $secondary-text;
     }
   }
 
