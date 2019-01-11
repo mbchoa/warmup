@@ -22,12 +22,12 @@
   }
 
   &__label {
-    color: $grey;
+    color: $primary-text;
     font-size: $small;
   }
 
   &__input {
-    color: $grey;
+    color: $primary-text;
     border: 2px solid $secondary;
     background-color: transparent;
     height: 15px;
@@ -52,7 +52,7 @@
   &__save-button {
     border: 2px solid $secondary;
     background-color: transparent;
-    color: $grey;
+    color: $primary-text;
   }
 
   &__secondary-button {
