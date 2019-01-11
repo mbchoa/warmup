@@ -11,10 +11,10 @@ pipeline {
         git 'https://github.com/mbchoa/warmup.git'
       }
     }
-    stage('Building image') {
+    stage('Building Web Image') {
       steps{
         script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build("${registry}:${BUILD_NUMBER}", "./web") 
         }
       }
     }
