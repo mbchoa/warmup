@@ -1,4 +1,4 @@
-import { FEMALE, MALE } from "./constants";
+import { FEMALE, MALE } from './constants';
 
 export const mifflinStJeor = ({
   age,
@@ -6,9 +6,9 @@ export const mifflinStJeor = ({
   height,
   weight,
 }) => {
-  if (gender !== FEMALE || gender !== MALE) {
+  if (gender !== FEMALE && gender !== MALE) {
     throw new Error('mifflineStJeor: Gender must be male or female');
   }
-
-  return (10 * weight) + (6.25 * height) - (5 * age) + (gender === FEMALE) ? -161 : 5;
+  const genderOffset = gender === FEMALE ? -161 : 5;
+  return (10 * weight) + (6.25 * height) - (5 * age) + genderOffset;
 }

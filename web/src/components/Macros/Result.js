@@ -2,10 +2,25 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import { partial } from 'lodash';
 
-const Result = () => {
+import { LOSE_WEIGHT, MAINTAIN_WEIGHT, BULK_WEIGHT } from '../../constants';
+
+const Result = ({ calculatedCalories, handleWeightGoalChange }) => {
   const [selectedTabIndex, setTabIndex] = useState(1)
 
   function handleTabClick(tabIndex) {
+    switch (tabIndex) {
+      case 0:
+        handleWeightGoalChange(LOSE_WEIGHT);
+        break;
+      case 1:
+        handleWeightGoalChange(MAINTAIN_WEIGHT);
+        break;
+      case 2:
+        handleWeightGoalChange(BULK_WEIGHT);
+        break;
+      default:
+        break;
+    }
     setTabIndex(tabIndex);
   }
 
@@ -26,7 +41,7 @@ const Result = () => {
         )} onClick={partial(handleTabClick, 2)}>Gain Weight</li>
       </ul>
       <div className="result__content">
-        2245 Calories
+        {calculatedCalories} Calories
       </div>
     </div>
   );
