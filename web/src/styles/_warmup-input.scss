@@ -19,13 +19,14 @@
   }
 
   &__input {
+    box-sizing: border-box;
     color: $primary-text;
     border: 2px solid $secondary;
     background-color: transparent;
-    font-size: $small;
-    height: 15px;
+    font-size: $medium;
     outline: none;
-    padding: 8px;
+    padding: 10px;
+    width: 100%;
   }
 
   &__button,

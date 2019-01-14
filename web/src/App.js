@@ -16,17 +16,13 @@ const HomeRoute = () => (
 
 const MacrosRoute = () => (
   <div className="app__macros-container">
-    <div className="app__home-center">
-      <Macros />
-    </div>
+    <Macros />
   </div>
 );
 
 const WarmupInputRoute = () => (
   <div className="app__warmup-container">
-    <div className="app__warmup-center">
-      <WarmupInput />
-    </div>
+    <WarmupInput />
   </div>
 );
 
