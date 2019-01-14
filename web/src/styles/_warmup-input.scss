@@ -1,6 +1,4 @@
 .warmup-input {
-  border: 2px solid black;
-  max-width: 253px;
   padding: 20px 16px;
 
   &__header {
@@ -15,26 +13,19 @@
     margin-top: 10px;
   }
 
-  &__form-row {
-    margin-top: 4px;
+  &__actions {
     display: flex;
-    justify-content: space-between;
-  }
-
-  &__label {
-    color: $primary-text;
-    font-size: $small;
+    margin-top: 16px;
   }
 
   &__input {
     color: $primary-text;
     border: 2px solid $secondary;
     background-color: transparent;
+    font-size: $small;
     height: 15px;
     outline: none;
     padding: 8px;
-    max-width: 100px;
-    width: 100%;
   }
 
   &__button,
@@ -42,10 +33,12 @@
   &__save-button {
     cursor: pointer;
     font-family: $sans-serif;
+    font-size: $small;
     font-weight: 700;
     outline: none;
     padding: 8px;
     text-transform: uppercase;
+    width: 50%;
   }
 
   &__button,
@@ -59,11 +52,6 @@
     border: 2px solid $secondary;
     background-color: $secondary;
     color: $secondary-text;
-  }
-
-  &__button,
-  &__secondary-button {
-    width: 60px;
   }
 
   &__save-button {

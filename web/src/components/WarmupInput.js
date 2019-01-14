@@ -34,14 +34,14 @@ const WarmupInput = () => {
     <div className="warmup-input">
       <h1 className="warmup-input__header">Warmup</h1>
       <div className="warmup-input__form">
-        <div className="warmup-input__form-row">
-          <input
-            className="warmup-input__input"
-            onChange={(e) => setTargetWeight(e.target.value)}
-            placeholder="Enter weight"
-            type="number"
-            value={targetWeight || ''}
-          />
+        <input
+          className="warmup-input__input"
+          onChange={(e) => setTargetWeight(e.target.value)}
+          placeholder="Enter weight"
+          type="number"
+          value={targetWeight || ''}
+        />
+        <div className="warmup-input__actions">
           <button
             className="warmup-input__button"
             onClick={handleCalculateClick}
