@@ -1,9 +1,13 @@
 .warmup-input {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   padding: 20px 16px;
 
   &__header {
     font-size: $header;
     font-weight: 500;
+    height: 35%;
     letter-spacing: 1.5px;
     text-align: center;
     text-transform: lowercase;
@@ -26,6 +30,7 @@
     font-size: $medium;
     outline: none;
     padding: 10px;
+    text-align: center;
     width: 100%;
   }
 
@@ -85,5 +90,11 @@
 
   &__value {
     margin-left: auto;
+  }
+
+  @media screen and (min-width: 340px) {
+    width: 340px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
