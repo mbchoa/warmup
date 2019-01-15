@@ -66,6 +66,7 @@ const Macros = () => {
 
   return (
     <div className="macros">
+      <h1 className="macros__header">macros</h1>
       <div className="macros__form">
         <FieldGroup block="gender" label="Gender">
           <button
