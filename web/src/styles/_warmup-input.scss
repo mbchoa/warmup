@@ -4,12 +4,7 @@
   height: 100%;
 
   &__header {
-    font-size: $header;
-    font-weight: 500;
-    height: 35%;
-    letter-spacing: 1.5px;
-    text-align: center;
-    text-transform: lowercase;
+    @include header;
   }
 
   &__form {
