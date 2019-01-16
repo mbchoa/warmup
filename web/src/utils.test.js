@@ -11,7 +11,7 @@ describe('utils Test Suite', () => {
     });
 
     it('should return non-empty array if targetWeight can be exactly matched', () => {
-      expect(getPlates([45, 25, 10], 205)).toEqual([[10, 1], [25, 1], [45, 1]]);
+      expect(getPlates([45, 25, 10], 205)).toEqual([45, 25, 10]);
     });
 
     it('should return empty array if targetWeight can not be exactly matched', () => {
