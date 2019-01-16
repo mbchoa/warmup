@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+
+import { getPlates } from '../../utils';
 
 const StyledBarbell = styled.div`
   display: flex;
@@ -50,13 +52,30 @@ const Button = styled.button`
 `;
 
 const Barbell = () => {
+  const [weight, setWeight] = useState('');
+  const [plates, setPlates] = useState([]);
+
+  function handleWeightChange (e) {
+    setWeight(Math.round(e.target.value));
+  }
+
+  function handleCalculate (e) {
+    e.preventDefault();
+    setPlates(getPlates([45, 25, 10, 5, 2.5], weight));
+    setWeight('');
+  }
+
   return (
     <StyledBarbell>
       <Header>barbell</Header>
-      <form>
-        <Input placeholder="Enter target weight" />
+      <Form onSubmit={handleCalculate}>
+        <Input
+          onChange={handleWeightChange}
+          placeholder="Enter target weight"
+          value={weight}
+        />
         <Button>Calculate</Button>
-      </form>
+      </Form>
     </StyledBarbell>
   );
 }
