@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Router } from '@reach/router'
 
+import Barbell from './components/Barbell';
 import Home from './components/Home';
 import Macros from './components/Macros';
 import WarmupInput from './components/WarmupInput';
@@ -26,6 +27,11 @@ const WarmupInputRoute = () => (
   </div>
 );
 
+const BarbellRoute = () => (
+  <div className="app__barbell-container">
+    <Barbell />
+  </div>
+)
 const WorkoutRoute = () => <Workouts />
 
 const App = () => {
@@ -49,6 +55,7 @@ const App = () => {
         <MacrosRoute path="/macros" />
         <WarmupInputRoute path="/warmup" />
         <WorkoutRoute path="/workouts" />
+        <BarbellRoute path="/barbell" />
       </Router>
     </div>
   );
