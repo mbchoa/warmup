@@ -1,4 +1,4 @@
-import { map } from 'lodash';
+import { PLATE_SET } from './constants';
 
 export const round5 = number => Math.round(number * .2) * 5;
 
@@ -8,7 +8,7 @@ export const kgToLb = kg => kg * 2.2046;
 
 export const inchToCm = inches => inches * 2.54;
 
-export const getPlates = (availablePlates, targetWeight) => {
+export const getPlates = (targetWeight, availablePlates = PLATE_SET) => {
   const output = []
   if (targetWeight === 0) return output;
 

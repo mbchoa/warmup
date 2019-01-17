@@ -14,3 +14,6 @@ export const EXTREME_ACTIVITY = 1.9;
 export const LOSE_WEIGHT = -500;
 export const MAINTAIN_WEIGHT = 0;
 export const BULK_WEIGHT = 500;
+
+// available plate set
+export const PLATE_SET = [45, 25, 10, 5, 2.5];
