@@ -4,12 +4,12 @@
   grid-template-rows: 100px 100px;
   grid-template-areas:
     "warmuplink macrolink"
-    "placeholder-left placeholder-right";
+    "barbelllink placeholder-right";
   grid-gap: 10px;
 
   &__warmup-link,
   &__macro-link,
-  &__placeholder-left,
+  &__barbell-link,
   &__placeholder-right {
     display: flex;
     justify-content: center;
@@ -18,7 +18,8 @@
   }
 
   &__warmup-link,
-  &__macro-link {
+  &__macro-link,
+  &__barbell-link {
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.1s;
@@ -38,25 +39,20 @@
   }
 
   &__macro-link {
-    grid-area: macrolink
+    grid-area: macrolink;
   }
 
-  &__placeholder-left,
+  &__barbell-link {
+    grid-area: barbelllink;
+  }
+
   &__placeholder-right {
+    background-color: grey;
+    grid-area: placeholder-right;
     transition: 0.1s;
 
     &:hover {
       background-color: lightgrey;
     }
-  }
-
-  &__placeholder-left {
-    background-color: grey;
-    grid-area: placeholder-left;
-  }
-
-  &__placeholder-right {
-    background-color: grey;
-    grid-area: placeholder-right
   }
 }

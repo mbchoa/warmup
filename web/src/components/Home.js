@@ -5,7 +5,7 @@ const Home = () => (
   <div className="home">
     <Link className="home__warmup-link" to="/warmup">Warmup</Link>
     <Link className="home__macro-link" to="/macros">Macros</Link>
-    <div className="home__placeholder-left" />
+    <Link className="home__barbell-link" to="/barbell">Barbell</Link>
     <div className="home__placeholder-right" />
   </div>
 );
