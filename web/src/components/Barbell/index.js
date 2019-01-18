@@ -4,6 +4,8 @@ import { map } from 'lodash';
 
 import { getPlates } from '../../utils';
 
+import Plate from './Plate';
+
 const StyledBarbell = styled.div`
   display: flex;
   flex-direction: column;
@@ -83,25 +85,6 @@ const PlateDropZone = styled.div`
   position: absolute;
   transform: translateX(-50%);
 `
-
-const Plate = styled.div`
-  align-items: center;
-  background-color: ${props => props.color};
-  border-radius: 5px;
-  display: flex;
-  height: 15px;
-  justify-content: center;
-  width: ${(props) => {
-    switch (props.weight) {
-      case 45: return 225;
-      case 25: return 160;
-      case 10: return 100;
-      case 5: return 70;
-      case 2.5: return 50;
-      default: return 0;
-    }
-  }}px;
-`;
 
 const Barbell = () => {
   const [weight, setWeight] = useState('');
