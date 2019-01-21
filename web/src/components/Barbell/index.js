@@ -101,14 +101,23 @@ const Barbell = () => {
   function handleCalculate (e) {
     e.preventDefault();
 
-    // check if there are plates available to set target weight
+    // TODO: need to come up with a better way to dynamically calculate maximum weight
+    // check if weight is beyond maximum that can be displayed
+    if (weight >= 700) {
+      setError('Weights greater than 700 lbs not supported.');
+      setPlates([]);
+      return;
+    }
+
     const plates = getPlates(weight)
+    setPlates(plates);
+    setWeight('');
+
+    // check if there are plates available to set target weight
     if (!plates.length) {
       setError('No available plates for target weight.');
       return;
     }
-    setPlates(plates);
-    setWeight('');
     setError('');
   }
 
