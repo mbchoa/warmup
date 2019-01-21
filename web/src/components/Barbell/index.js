@@ -27,10 +27,6 @@ const Header = styled.h1`
   text-transform: lowercase;
 `
 
-const Form = styled.form`
-
-`
-
 const Input = styled.input`
   border: 2px solid black;
   box-sizing: border-box;
@@ -54,12 +50,19 @@ const Button = styled.button`
   width: 100%;
 `;
 
+const ErrorMessage = styled.div`
+  color: red;
+  font-size: 14px;
+  height: 19px;
+  margin-top: 8px;
+`;
+
 const PlatesDropZone = styled.div`
   border: 2px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 48px;
+  margin-top: 24px;
   position: relative;
   width: 100%;
 `;
@@ -88,6 +91,7 @@ const PlateDropZone = styled.div`
 
 const Barbell = () => {
   const [weight, setWeight] = useState('');
+  const [error, setError] = useState('');
   const [plates, setPlates] = useState([]);
 
   function handleWeightChange (e) {
@@ -96,21 +100,30 @@ const Barbell = () => {
 
   function handleCalculate (e) {
     e.preventDefault();
-    setPlates(getPlates(weight));
+
+    // check if there are plates available to set target weight
+    const plates = getPlates(weight)
+    if (!plates.length) {
+      setError('No available plates for target weight.');
+      return;
+    }
+    setPlates(plates);
     setWeight('');
+    setError('');
   }
 
   return (
     <StyledBarbell>
       <Header>barbell</Header>
-      <Form onSubmit={handleCalculate}>
+      <form onSubmit={handleCalculate}>
         <Input
           onChange={handleWeightChange}
           placeholder="Enter target weight"
           value={weight}
         />
         <Button>Calculate</Button>
-      </Form>
+      </form>
+      <ErrorMessage>{error}</ErrorMessage>
       <PlatesDropZone>
         {map(plates, (value, index) => (
           <PlateDropZone index={index+1} key={index}>
