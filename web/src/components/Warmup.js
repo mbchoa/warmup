@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { kgToLb, lbToKg, round5 } from '../utils';
 
-const WarmupInput = () => {
+const Warmup = () => {
   const [targetWeight, setTargetWeight] = useState(0);
   const [isCalculated, setIsCalculated] = useState(false);
   const [firstWarmup, setFirstWarmup] = useState(0);
@@ -96,4 +96,4 @@ const WarmupInput = () => {
   )
 }
 
-export default WarmupInput;
+export default Warmup;
