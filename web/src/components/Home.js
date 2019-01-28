@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from '@reach/router';
 
+import '../styles/home.scss';
+
 const Home = () => (
   <div className="home">
     <Link className="home__warmup-link" to="/warmup">Warmup</Link>

@@ -4,6 +4,8 @@ import { partial } from 'lodash';
 
 import { LOSE_WEIGHT, MAINTAIN_WEIGHT, BULK_WEIGHT } from '../../constants';
 
+import '../../styles/result.scss';
+
 const Result = ({ calculatedCalories, handleWeightGoalChange }) => {
   const [selectedTabIndex, setTabIndex] = useState(1)
 

@@ -16,6 +16,8 @@ import { inchToCm, lbToKg } from '../../utils';
 import FieldGroup from './FieldGroup';
 import Result from './Result';
 
+import '../../styles/macros.scss';
+
 const Macros = () => {
   const [gender, setGender] = useState(MALE);
   const [heightFt, setHeightFt] = useState(0);

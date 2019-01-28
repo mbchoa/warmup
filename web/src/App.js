@@ -7,6 +7,8 @@ import MacrosRoute from './routes/MacrosRoute';
 import WarmupRoute from './routes/WarmupRoute';
 import WorkoutsRoute from './routes/WorkoutsRoute';
 
+import './styles/app.scss';
+
 const App = () => {
   useEffect(() => {
     window.addEventListener('beforeinstallprompt', (e) => {
