@@ -103,8 +103,8 @@ const Barbell = () => {
 
     // TODO: need to come up with a better way to dynamically calculate maximum weight
     // check if weight is beyond maximum that can be displayed
-    if (weight >= 700) {
-      setError('Weights greater than 700 lbs not supported.');
+    if (weight > 575) {
+      setError('Weights greater than 575 lbs not supported.');
       setPlates([]);
       return;
     }
