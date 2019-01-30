@@ -8,7 +8,7 @@ const Home = () => (
     <Link className="home__warmup-link" to="/warmup">Warmup</Link>
     <Link className="home__macro-link" to="/macros">Macros</Link>
     <Link className="home__barbell-link" to="/barbell">Barbell</Link>
-    <div className="home__placeholder-right" />
+    <Link className="home__workouts-link" to="/workouts">Workouts</Link>
   </div>
 );
 

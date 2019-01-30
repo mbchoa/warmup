@@ -6,13 +6,13 @@
   grid-template-rows: 100px 100px;
   grid-template-areas:
     "warmuplink macrolink"
-    "barbelllink placeholder-right";
+    "barbelllink workoutslink";
   grid-gap: 10px;
 
   &__warmup-link,
   &__macro-link,
   &__barbell-link,
-  &__placeholder-right {
+  &__workouts-link {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,7 +21,8 @@
 
   &__warmup-link,
   &__macro-link,
-  &__barbell-link {
+  &__barbell-link,
+  &__workouts-link {
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.1s;
@@ -48,13 +49,7 @@
     grid-area: barbelllink;
   }
 
-  &__placeholder-right {
-    background-color: grey;
-    grid-area: placeholder-right;
-    transition: 0.1s;
-
-    &:hover {
-      background-color: lightgrey;
-    }
+  &__workouts-link {
+    grid-area: workoutslink;
   }
 }
