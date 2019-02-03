@@ -11,8 +11,12 @@
     height: 10%;
   }
 
-  &__instance {
-    margin-top: 40px;
+  &__log {
+    margin-top: 20px;
+  }
+
+  &__day-of-week {
+    font-size: $extra-small;
   }
 
   &__exercise-type {
@@ -21,5 +25,11 @@
 
   &__exercise-sets {
     margin-top: 10px;
+  }
+
+  @media screen and (min-width: 340px) {
+    width: 340px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
