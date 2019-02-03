@@ -1,0 +1,25 @@
+@import 'shared';
+
+.workouts {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__header {
+    @include header;
+
+    height: 10%;
+  }
+
+  &__instance {
+    margin-top: 40px;
+  }
+
+  &__exercise-type {
+    text-transform: capitalize;
+  }
+
+  &__exercise-sets {
+    margin-top: 10px;
+  }
+}
