@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { Router } from '@reach/router'
 
+import PosedRouter from './PosedRouter';
 import BarbellRoute from './routes/BarbellRoute';
 import HomeRoute from './routes/HomeRoute';
 import MacrosRoute from './routes/MacrosRoute';
@@ -25,13 +25,13 @@ const App = () => {
   })
   return (
     <div className="app">
-      <Router className="app__router">
+      <PosedRouter className="app__router">
         <HomeRoute path="/" />
         <MacrosRoute path="/macros" />
         <WarmupRoute path="/warmup" />
         <WorkoutsRoute path="/workouts" />
         <BarbellRoute path="/barbell" />
-      </Router>
+      </PosedRouter>
     </div>
   );
 }
